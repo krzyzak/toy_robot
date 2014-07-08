@@ -31,7 +31,7 @@ module ToyRobot
       elsif command == "right"
         right
       elsif command == "report"
-        puts report
+        puts report if report
       elsif command == "exit"
         raise Interrupt
       else
