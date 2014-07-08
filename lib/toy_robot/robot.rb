@@ -29,6 +29,10 @@ module ToyRobot
     def direction=(new_direction)
       @direction = new_direction if DIRECTIONS.include?(new_direction)
     end
+
+    def placed?
+      position && direction
+    end
     private
     def new_position
       position + Position.new(direction: direction)
