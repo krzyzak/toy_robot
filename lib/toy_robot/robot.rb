@@ -33,6 +33,11 @@ module ToyRobot
     def placed?
       position && direction
     end
+
+    def report
+      [position.x, position.y, direction.upcase].join(", ")
+    end
+
     private
     def new_position
       position + Position.new(direction: direction)
