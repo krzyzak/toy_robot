@@ -3,6 +3,11 @@ class RobotTest < MiniTest::Test
     @robot = ToyRobot::Robot.new(position: ToyRobot::Position.new(x: 0, y: 0), direction: :north, board: ToyRobot::Board.new(5, 5))
   end
 
+  def test_board_is_required
+    assert_raises ArgumentError do
+      ToyRobot::Robot.new
+    end
+  end
   # move!
 
   def test_valid_move_should_change_robot_position

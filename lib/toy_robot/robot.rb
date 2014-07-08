@@ -4,10 +4,10 @@ module ToyRobot
 
     DIRECTIONS = [:north, :west, :south, :east]
 
-    def initialize(position: nil, direction: nil, board:)
+    def initialize(position: nil, direction: nil, board: nil)
       @position = position
       @direction = direction
-      @board = board
+      @board = board || (raise ArgumentError.new("Board is required"))
     end
 
     def move!
