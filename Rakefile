@@ -26,3 +26,5 @@ end
 task :game do
   ToyRobot::CLI.new.run!
 end
+
+task default: :test
