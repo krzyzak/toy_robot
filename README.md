@@ -1,6 +1,7 @@
 Toy Robot Simulator
 =========
-
+[![Build Status](https://travis-ci.org/krzyzak/toy_robot.png)](https://travis-ci.org/krzyzak/toy_robot)
+[![Code Climate](https://codeclimate.com/github/krzyzak/toy_robot.png)](https://codeclimate.com/github/krzyzak/toy_robot)
 ## Installation
 
 ```
@@ -13,7 +14,9 @@ bundle
 ## Usage
 
 Run ```rake game``` to run robot.
+
 If you want to go play with ToyRobot internals, just run ```rake console``` – It automatically loads IRB session with ToyRobot environment.
+
 Run ```rake test``` to run all tests.
 
 ## Description
@@ -24,6 +27,7 @@ Run ```rake test``` to run all tests.
 that would result in the robot falling from the table must be prevented, however further valid movement commands must still
 be allowed.
 * Create an application that can read in commands of the following form -
+
   ```
     PLACE X,Y,F
     MOVE
