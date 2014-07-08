@@ -13,11 +13,17 @@ bundle
 
 ## Usage
 
-Run ```rake game``` to run robot.
 
-If you want to go play with ToyRobot internals, just run ```rake console``` – It automatically loads IRB session with ToyRobot environment.
+### Running game 
 
-Run ```rake test``` to run all tests.
+There are two ways to run robot:
+* Use ```rake game``` to use Standard Input as a source
+* Use ```rake game path/to/file``` to use File as a source.
+  * If there’s ```Output: X, Y, Position``` in file, runner is running in test mode, which means that it checks if current output is the same as expected, raising exception otherwise.
+  * Otherwise, it’s just running each line
+
+* If you want to go play with ToyRobot internals, just run ```rake console``` – It automatically loads IRB session with ToyRobot environment.
+* Run ```rake test``` to run all tests.
 
 ## Description
 
