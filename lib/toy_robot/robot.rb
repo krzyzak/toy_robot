@@ -11,6 +11,10 @@ module ToyRobot
       @board = board
     end
 
+    def move!
+      @position = new_position if board.valid?(new_position)
+    end
+
     def left!
       @direction = DIRECTIONS[direction_index+1] || DIRECTIONS[0]
     end
@@ -20,6 +24,10 @@ module ToyRobot
     end
 
     private
+    def new_position
+      position + Position.new(direction: direction)
+    end
+
     def direction_index
       DIRECTIONS.index(@direction)
     end

@@ -22,5 +22,9 @@ module ToyRobot
 
       Position.new(x: to_x, y: to_y, direction: other.direction)
     end
+
+    def ==(other)
+      x == other.x && y == other.y
+    end
   end
 end
