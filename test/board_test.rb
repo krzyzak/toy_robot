@@ -1,5 +1,3 @@
-require_relative "./test_helper"
-
 class BoardTest < MiniTest::Test
   def setup
     @board = ToyRobot::Board.new(5, 5)
