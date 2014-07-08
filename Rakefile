@@ -21,3 +21,8 @@ task :test do
 
   Dir["test/*_test.rb"].each{|f| require f }
 end
+
+
+task :game do
+  ToyRobot::CLI.new.run!
+end
