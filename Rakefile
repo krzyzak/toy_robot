@@ -1,3 +1,5 @@
+require "bundler/setup"
+Bundler.require
 require "pathname"
 path = Pathname.new(__FILE__).realpath
 $:.unshift File.expand_path("../lib", path)
@@ -12,6 +14,8 @@ task :console do
 end
 
 task :test do
+  Bundler.require(:test)
+
   require "minitest/autorun"
   $:.unshift File.expand_path("../", path)
 
