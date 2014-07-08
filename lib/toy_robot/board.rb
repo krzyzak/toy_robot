@@ -7,8 +7,8 @@ module ToyRobot
       @y = y
     end
 
-    def valid?(to_x, to_y)
-      (0..x).cover?(to_x) && (0..y).cover?(to_y)
+    def valid?(position)
+      (0..x).cover?(position.x) && (0..y).cover?(position.y)
     end
   end
 end
