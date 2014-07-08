@@ -19,7 +19,6 @@ module ToyRobot
       end
     end
 
-    private
     def run_command!(command)
       if command =~ place_regexp
         _, x, y, direction = command.match(place_regexp).to_a
@@ -39,6 +38,7 @@ module ToyRobot
       end
     end
 
+    private
     def game
       @game ||= Game.new
     end

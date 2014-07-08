@@ -24,7 +24,13 @@ end
 
 
 task :game do
-  ToyRobot::CLI.new.run!
+  files = ARGV.drop(1)
+
+  if files.empty?
+    ToyRobot::CLI.new.run!
+  else
+    ToyRobot::FileRunner.new(files).run!
+  end
 end
 
 task default: :test
