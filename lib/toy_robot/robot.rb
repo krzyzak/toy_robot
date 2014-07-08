@@ -1,18 +1,17 @@
 module ToyRobot
   class Robot
-    attr_reader :position, :board
-    attr_accessor :direction
+    attr_reader :position, :board, :direction
 
     DIRECTIONS = [:north, :west, :south, :east]
 
-    def initialize(position:, direction:, board:)
+    def initialize(position: nil, direction: nil, board:)
       @position = position
       @direction = direction
       @board = board
     end
 
     def move!
-      @position = new_position if board.valid?(new_position)
+      self.position= new_position if placed?
     end
 
     def left!
@@ -23,6 +22,13 @@ module ToyRobot
       @direction = DIRECTIONS[direction_index-1]
     end
 
+    def position=(new_position)
+      @position = new_position if board.valid?(new_position)
+    end
+
+    def direction=(new_direction)
+      @direction = new_direction if DIRECTIONS.include?(new_direction)
+    end
     private
     def new_position
       position + Position.new(direction: direction)
